@@ -1,4 +1,4 @@
-#include "InputHandler.hpp"
+#include "InputHandler.h"
 
 InputHandler::InputHandler(PieceTable* pTable) : pTable(pTable)
 {
@@ -10,54 +10,91 @@ void InputHandler::handleEvents(SDL_Event& e)
 	std::string currentText = pTable->getText();
 	cursorPosition = pTable->getText().length();
 
-	if (e.type == SDL_QUIT) {
-		// need to handle this
-		exit(0);
-	}
-	else if (e.type == SDL_TEXTINPUT)
+	switch (e.type)
 	{
-		pTable->insert(cursorPosition, e.text.text);
-		cursorPosition += strlen(e.text.text);
-	}
-	else if (e.type == SDL_KEYDOWN) {
-		//buffer->deleteLastCharacter();
-		if (e.key.keysym.sym == SDLK_BACKSPACE && cursorPosition > 0)
+		case SDL_QUIT:
 		{
-			pTable->erase(cursorPosition - 1, 1);
-			cursorPosition--;
+			exit(0);
+			break;
 		}
-		else if (e.key.keysym.sym == SDLK_UP && cursorRow > 0)
+		case SDL_TEXTINPUT:
 		{
-			// move up
-			cursorRow--;
-			cursorPosition = findCursorPositionInRow(cursorRow);
+			pTable->insert(cursorPosition, e.text.text);
+			cursorPosition += strlen(e.text.text);
+			break;
 		}
-		else if (e.key.keysym.sym == SDLK_DOWN && cursorRow > 0)
+		case SDL_KEYDOWN:
 		{
-			cursorRow++;
-			cursorPosition = findCursorPositionInRow(cursorRow);
-		}
-		else if (e.key.keysym.sym == SDLK_LEFT && cursorPosition > 0) {
-			// Move cursor left
-			cursorPosition--;
-			if (currentText[cursorPosition] == '\n')
+			switch(e.key.keysym.sym)
 			{
-				cursorRow--;
+				case SDLK_BACKSPACE:
+				{
+					if (cursorPosition < 0)
+						break;
+
+					pTable->erase(cursorPosition - 1, 1);
+					cursorPosition--;
+					break;
+				}
+
+				case SDLK_UP:
+				{
+					if (cursorRow < 0)
+						break;
+
+					// move up
+					cursorRow--;
+					cursorPosition = findCursorPositionInRow(cursorRow);
+					break;
+				}
+				case SDLK_DOWN:
+				{
+					if (cursorRow < 0)
+						break;
+
+					cursorRow++;
+					cursorPosition = findCursorPositionInRow(cursorRow);
+					break;
+				}
+
+				case SDLK_LEFT:
+				{
+					if (cursorPosition < 0)
+						break;
+
+					cursorPosition--;
+					if (currentText[cursorPosition] == '\n')
+					{
+						cursorRow--;
+					}
+					break;
+				}
+
+				case SDLK_RIGHT:
+				{
+					if (cursorPosition > pTable->getText().length())
+						break;
+
+					cursorPosition++;
+					if (currentText[cursorPosition] == '\n')
+					{
+						cursorRow++;
+					}
+					break;
+				}
+
+				case SDLK_RETURN:
+				{
+					pTable->insert(cursorPosition, "\n");
+					cursorPosition++;
+					break;
+				}
 			}
+			break;
 		}
-		else if (e.key.keysym.sym == SDLK_RIGHT && cursorPosition < pTable->getText().length()) {
-			// Move cursor right
-			cursorPosition++;
-			if (currentText[cursorPosition] == '\n')
-			{
-				cursorRow++;
-			}
-		}
-		else if (e.key.keysym.sym == SDLK_RETURN) {
-			// Insert newline
-			pTable->insert(cursorPosition, "\n");
-			cursorPosition++;
-		}
+
+		default:
+			break;
 	}
 }
 

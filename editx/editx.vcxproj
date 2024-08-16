@@ -144,16 +144,16 @@
     <ClCompile Include="src\renderer\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\buffer\lexer\Lexer.hpp" />
-    <ClInclude Include="src\buffer\piece\PieceBuffer.hpp" />
-    <ClInclude Include="src\buffer\TextBuffer.hpp" />
-    <ClInclude Include="src\core\config.hpp" />
-    <ClInclude Include="src\core\Editor.hpp" />
-    <ClInclude Include="src\core\filebrowser\FileBrowser.hpp" />
-    <ClInclude Include="src\core\filebrowser\FileSystem.hpp" />
-    <ClInclude Include="src\handlers\InputHandler.hpp" />
-    <ClInclude Include="src\renderer\Renderer.hpp" />
-    <ClInclude Include="src\ui\ui.hpp" />
+    <ClInclude Include="src\buffer\lexer\Lexer.h" />
+    <ClInclude Include="src\buffer\piece\PieceBuffer.h" />
+    <ClInclude Include="src\buffer\TextBuffer.h" />
+    <ClInclude Include="src\core\config.h" />
+    <ClInclude Include="src\core\Editor.h" />
+    <ClInclude Include="src\core\filebrowser\FileBrowser.h" />
+    <ClInclude Include="src\core\filebrowser\FileSystem.h" />
+    <ClInclude Include="src\handlers\InputHandler.h" />
+    <ClInclude Include="src\renderer\Renderer.h" />
+    <ClInclude Include="src\ui\ui.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

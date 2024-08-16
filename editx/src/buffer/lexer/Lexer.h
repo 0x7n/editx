@@ -28,7 +28,6 @@ struct Token
 typedef std::map<std::string, TokenType> ReservedIdMap;
 inline ReservedIdMap reservedId;
 
-
 inline std::vector<std::string> splitString(const std::string& sourceCode) {
 	std::vector<std::string> words;
 	std::string word;
@@ -146,6 +145,10 @@ namespace lexer
 		reservedId["const"] = TokenType::LET;
 		reservedId["int"] = TokenType::LET;
 		reservedId["float"] = TokenType::LET;
+		reservedId["class"] = TokenType::LET;
+		reservedId["enum"] = TokenType::LET;
+		reservedId["union"] = TokenType::LET;
+		reservedId["void"] = TokenType::LET;
 		reservedId["while"] = TokenType::CONDITION;
 		reservedId["if"] = TokenType::CONDITION;
 		reservedId["else"] = TokenType::CONDITION;
@@ -182,11 +185,10 @@ namespace lexer
 			}
 			else if (current == "\"")
 			{
-				shift(src);
-				std::string strValue;
+				std::string strValue = shift(src); // include first quotemark
 				while (!src.empty()) {
 					if (src.front() == "\\") {
-						shift(src);
+						strValue += shift(src);
 						if (!src.empty())
 						{
 							strValue += shift(src);
@@ -194,15 +196,12 @@ namespace lexer
 					}
 					else if (src.front() == "\"")
 					{
+						strValue += shift(src); // add closing quotemark
 						break;
 					}
 					else {
-						strValue += shift(src);
+						strValue += shift(src); // add chars
 					}
-				}
-				if (!src.empty() && src.front() == "\"")
-				{
-					shift(src);
 				}
 
 				tokens.push_back(token(strValue, TokenType::STRING));

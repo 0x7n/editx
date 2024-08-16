@@ -5,10 +5,10 @@
 #include <SDL2/SDL_ttf.h>
 #include <iostream>
 
-#include "FileSystem.hpp"
-#include "../../buffer/TextBuffer.hpp"
-#include "../../ui/ui.hpp"
-#include "../config.hpp"
+#include "FileSystem.h"
+#include "../../buffer/TextBuffer.h"
+#include "../../ui/ui.h"
+#include "../config.h"
 
 class FileBrowser : public Widget
 {
@@ -30,9 +30,9 @@ public:
     void draw(SDL_Renderer* renderer) override;
     void handleEvent(SDL_Event& event) override;
 
-	std::string getSelectedPath() const;
-	std::string getRawPath() const;
-	std::string getDirectory() const;
+	std::string_view getSelectedPath() const;
+	std::string_view getRawPath() const;
+	std::string_view getDirectory() const;
 	void setDirectory(const std::string& directory);
 
 private:

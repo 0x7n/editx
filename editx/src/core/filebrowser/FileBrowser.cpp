@@ -1,16 +1,16 @@
-#include "FileBrowser.hpp"
+#include "FileBrowser.h"
 #include <iostream>
 #include <filesystem>
-#include "../config.hpp"
+#include "../config.h"
 
-std::string FileBrowser::getSelectedPath() const {
+std::string_view FileBrowser::getSelectedPath() const {
     if (selectedIndex >= 0 && selectedIndex < items.size()) {
-        return currentDirectory + "/" + items[selectedIndex].name;
+        return getDirectory().data() + std::string("/") + items[selectedIndex].name;
     }
     return "";
 }
 
-std::string FileBrowser::getRawPath() const
+std::string_view FileBrowser::getRawPath() const
 {
     if (selectedIndex >= 0 && selectedIndex < items.size() && !items[selectedIndex].isDirectory) {
         return items[selectedIndex].path;
@@ -18,7 +18,7 @@ std::string FileBrowser::getRawPath() const
     return ".";
 }
 
-std::string FileBrowser::getDirectory() const
+std::string_view FileBrowser::getDirectory() const
 {
     return currentDirectory;
 }

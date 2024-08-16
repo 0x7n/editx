@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 #include <string>
-#include "../buffer/lexer/Lexer.hpp"
+#include "../buffer/lexer/Lexer.h"
 #include <unordered_map>
 
 class Renderer
@@ -22,9 +22,7 @@ public:
         {BINARYOPERATOR, {255, 0, 0, 255}},  // Red
         {LET, {183,209,141, 255}},             // Green
         {CONDITION, {191,157,222, 255}},      // Indigo
-        //{STRING_LITERAL, {255, 20, 147, 255}}, // Deep Pink
-        //{COMMENT, {128, 128, 128, 255}},     // Gray
-        //{ERROR, {255, 0, 0, 255}}            // Red (for errors)
+        {STRING, {255,20,147, 255}} // pink ish
     };
 
 

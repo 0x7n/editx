@@ -1,4 +1,4 @@
-#include "FileSystem.hpp"
+#include "FileSystem.h"
 #include <filesystem>
 #include <fstream>
 #include <sstream>
@@ -18,8 +18,7 @@ std::vector<FileSystem::FileInfo> FileSystem::listFiles(const std::string& direc
     return items;
 }
 
-std::string FileSystem::readFile(const std::string& path)
-{
+std::string FileSystem::readFile(const std::string& path) {
 	std::ifstream file(path);
 	std::stringstream buffer;
 	buffer << file.rdbuf();

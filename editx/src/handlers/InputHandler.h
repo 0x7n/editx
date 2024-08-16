@@ -1,12 +1,11 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include "../buffer/TextBuffer.hpp"
-#include "../buffer/piece/PieceBuffer.hpp"
+#include "../buffer/TextBuffer.h"
+#include "../buffer/piece/PieceBuffer.h"
 
-class InputHandler
-{
+class InputHandler {
 public:
-	InputHandler(PieceTable* pTable);
+	explicit InputHandler(PieceTable* pTable);
 	void handleEvents(SDL_Event& e);
 	int getCursorPosition() const;
 	int getCursorRow() const;
@@ -15,6 +14,6 @@ public:
 private:
 	TextBuffer* buffer;
 	PieceTable* pTable;
-	int cursorPosition;
-	int cursorRow;
+	int			cursorPosition;
+	int			cursorRow;
 };
