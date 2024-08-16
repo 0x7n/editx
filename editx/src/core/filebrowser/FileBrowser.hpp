@@ -5,10 +5,10 @@
 #include <SDL2/SDL_ttf.h>
 #include <iostream>
 
-#include "FileSystem.h"
-#include "../../buffer/TextBuffer.h"
+#include "FileSystem.hpp"
+#include "../../buffer/TextBuffer.hpp"
 #include "../../ui/ui.hpp"
-#include "../config.h"
+#include "../config.hpp"
 
 class FileBrowser : public Widget
 {

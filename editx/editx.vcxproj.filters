@@ -38,34 +38,34 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\buffer\TextBuffer.h">
+    <ClInclude Include="src\buffer\TextBuffer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\renderer\Renderer.h">
+    <ClInclude Include="src\renderer\Renderer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\handlers\InputHandler.h">
+    <ClInclude Include="src\handlers\InputHandler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\Editor.h">
+    <ClInclude Include="src\core\Editor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\filebrowser\FileSystem.h">
+    <ClInclude Include="src\core\filebrowser\FileSystem.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\filebrowser\FileBrowser.h">
+    <ClInclude Include="src\core\filebrowser\FileBrowser.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\buffer\piece\PieceBuffer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\buffer\lexer\Lexer.h">
+    <ClInclude Include="src\buffer\lexer\Lexer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ui\ui.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\config.h">
+    <ClInclude Include="src\core\config.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

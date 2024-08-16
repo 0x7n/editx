@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 #include <string>
-#include "../buffer/lexer/Lexer.h"
+#include "../buffer/lexer/Lexer.hpp"
 #include <unordered_map>
 
 class Renderer

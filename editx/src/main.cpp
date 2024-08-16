@@ -1,4 +1,4 @@
-#include "core/Editor.h"
+#include "core/Editor.hpp"
 #undef main
 
 int main()

@@ -1,4 +1,4 @@
-#include "TextBuffer.h"
+#include "TextBuffer.hpp"
 
 TextBuffer::TextBuffer() : text("") {}
 

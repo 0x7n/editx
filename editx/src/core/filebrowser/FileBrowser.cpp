@@ -1,7 +1,7 @@
-#include "FileBrowser.h"
+#include "FileBrowser.hpp"
 #include <iostream>
 #include <filesystem>
-#include "../config.h"
+#include "../config.hpp"
 
 std::string FileBrowser::getSelectedPath() const {
     if (selectedIndex >= 0 && selectedIndex < items.size()) {

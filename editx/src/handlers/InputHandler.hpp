@@ -1,6 +1,6 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include "../buffer/TextBuffer.h"
+#include "../buffer/TextBuffer.hpp"
 #include "../buffer/piece/PieceBuffer.hpp"
 
 class InputHandler

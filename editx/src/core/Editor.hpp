@@ -3,10 +3,10 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
-#include "../buffer/TextBuffer.h"
-#include "../renderer/Renderer.h"
-#include "../handlers/InputHandler.h"
-#include "filebrowser/FileBrowser.h"
+#include "../buffer/TextBuffer.hpp"
+#include "../renderer/Renderer.hpp"
+#include "../handlers/InputHandler.hpp"
+#include "filebrowser/FileBrowser.hpp"
 #include "../ui/ui.hpp"
 
 #include <fstream>

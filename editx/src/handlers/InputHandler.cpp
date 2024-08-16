@@ -1,4 +1,4 @@
-#include "InputHandler.h"
+#include "InputHandler.hpp"
 
 InputHandler::InputHandler(PieceTable* pTable) : pTable(pTable)
 {

@@ -1,6 +1,6 @@
-#include "Editor.h"
-#include "filebrowser/FileSystem.h"
-#include "config.h"
+#include "Editor.hpp"
+#include "filebrowser/FileSystem.hpp"
+#include "config.hpp"
 
 #include <iostream>
 #include <algorithm>
